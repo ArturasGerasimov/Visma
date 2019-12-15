@@ -1,0 +1,17 @@
+{% extends("base.html.twig") %}
+{% block body %}
+
+<h1>Visma task</h1>
+
+    {{ form_start(form) }}
+        {{ form_row(form.number) }}
+        {{ form_row(form.submit) }}
+    {{ form_end(form) }}
+
+    Your numbers:
+    {% for number in numbers %}
+       {{ number.number|join(",") }}
+    {% endfor %}
+    <br>
+    Your number count: {{ arrayOfNumbers }}
+{% endblock %}
